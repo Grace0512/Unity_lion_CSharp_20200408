@@ -23,7 +23,7 @@ public class action : MonoBehaviour
     {
         mons.HP -= bat.attack;
 
-        result.text = "受到蝙蝠攻擊:" + bat.attack + "\n" + "史萊姆剩餘血量:" + mons.HP;
+        result.text = "<color=#788610>"+"受到蝙蝠攻擊:" + bat.attack + "\n" + "史萊姆剩餘血量:" + mons.HP+"</color>";
 
 
 
