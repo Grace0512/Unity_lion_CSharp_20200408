@@ -33,6 +33,10 @@ public class Class9_DelegateEvent : MonoBehaviour
     // ※ 簽名：方法的傳回類型、參數類型與參數數量。
     public delegate void DelegateTest();
     public delegate void DelegateTest2(string s);
+    // 委派的簽名：無傳回、一個參數、整數
+    public delegate void DelegateTest3(int number);
+
+
 
     //定義委派欄位
     public DelegateTest dA;
@@ -40,6 +44,8 @@ public class Class9_DelegateEvent : MonoBehaviour
     public DelegateTest2 dC;
     public DelegateTest d;
     public DelegateTest d2;
+
+    public DelegateTest3 d3;
 
     private void Start()
     {
@@ -54,9 +60,22 @@ public class Class9_DelegateEvent : MonoBehaviour
 
         d = MethodA;
         d += MethodB;
-       
+
+        // Lambda 匿名函式
+        // () => { 陳述式 }
+        d += () => 
+        { 
+            print("我是匿名函式哦1~");
+            print("我是匿名函式哦2~");
+        };
+
         d();
 
+        d3 = (n) => { n *= 10; print("十倍後的數值"+n); };
+
+        d3(7);
+
     }
+
 
 }
